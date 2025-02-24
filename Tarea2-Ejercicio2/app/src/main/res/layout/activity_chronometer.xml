@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/item_one"
+    android:padding="16dp">
+
+    <!-- Texto del Cronómetro -->
+    <TextView
+        android:id="@+id/txtCronometro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="48sp"
+        android:textColor="#000000"
+        android:padding="16dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+    <!-- Contenedor de Botones -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciar"
+            android:background="@drawable/button_background"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/btnPausar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pausar"
+            android:background="@drawable/operator_background"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/btnReiniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar"
+            android:background="@drawable/operator_background"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="10dp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:onClick="onBackClick"/>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<resources>
+    <!-- Estilo base para todos los botones -->
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <!-- Estilo para los botones de números -->
+    <style name="NumberButtonStyle" parent="ButtonStyle">
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <!-- Estilo para los botones de operaciones (+, −, ×, ÷) -->
+    <style name="OperatorStyle" parent="ButtonStyle">
+        <item name="android:background">@drawable/operator_background</item>
+    </style>
+
+    <!-- Estilo para el botón de igual (=) -->
+    <style name="EqualStyle" parent="ButtonStyle">
+        <item name="android:background">@drawable/equal_background</item>
+    </style>
+
+    <!-- Estilo para el botón de limpiar (C) -->
+    <style name="ClearStyle" parent="ButtonStyle">
+        <item name="android:background">@drawable/clear_background</item>
+    </style>
+</resources>
