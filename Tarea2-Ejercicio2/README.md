@@ -1,4 +1,4 @@
-# 📱 Tarea2-Ejercicio3
+# 📱 Tarea2-Ejercicio2
 
 ## 📌 Descripción
 
