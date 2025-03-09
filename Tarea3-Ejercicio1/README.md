@@ -1,98 +1,125 @@
-# 📌 Proyecto: Consumo de API Pública - Open Library API
+# 📌 Proyecto: Implementación de un Servicio REST con Node.js y Consumo en Android
 
 ## 📖 Descripción del Proyecto
-Esta aplicación móvil para Android consume la **API pública de Open Library**, permitiendo buscar libros por título y visualizar información relevante como el autor, el año de publicación y la portada del libro.
-
-Se ha utilizado **Retrofit** para realizar peticiones HTTP y **RecyclerView** con **Glide** para mostrar los resultados en una interfaz moderna y atractiva.
+Este proyecto consiste en la implementación de un servicio **RESTful** con **Node.js y Express**, el cual proporciona un **mensaje en formato JSON**. Posteriormente, la aplicación Android consume este servicio utilizando **Retrofit** para realizar la petición HTTP y mostrar la información en la interfaz de usuario.
 
 ---
 
 ## 🚀 Configuración y Ejecución
 
-### **1️⃣ Requisitos Previos**
-- Tener instalado **Android Studio** (última versión recomendada).
-- Un emulador configurado o un dispositivo físico con modo desarrollador activado.
+### **1️⃣ Configuración y Ejecución del Backend (Node.js)**
 
-### **2️⃣ Clonar el Repositorio**
-```sh
- https://github.com/Maukiro/DESARROLLO-DE-APLICACIONES-MOVILES-NATIVAS/new/main/Tarea3-Ejercicio1
-```
+#### 📌 **Requisitos Previos:**
+- Tener instalado **Node.js** (versión 14 o superior).
+- Tener instalado **npm** (gestor de paquetes de Node.js).
 
-### **3️⃣ Abrir el Proyecto en Android Studio**
-1. Abre **Android Studio** y selecciona "Open an Existing Project".
-2. Navega hasta la carpeta del proyecto clonado y ábrelo.
-3. Espera a que Android Studio cargue y sincronice las dependencias.
+#### 📌 **Pasos para Ejecutar el Backend:**
+1. Clonar el repositorio:
+   ```sh
+   git clone https://github.com/Maukiro/DESARROLLO-DE-APLICACIONES-MOVILES-NATIVAS/edit/main/Tarea3-Ejercicio1/README.md
+   ```
+2. Ir al directorio del backend:
+   ```sh
+   cd nombre_del_repositorio/Backend
+   ```
+3. Instalar las dependencias necesarias:
+   ```sh
+   npm install
+   ```
+4. Ejecutar el servidor:
+   ```sh
+   node server.js
+   ```
+5. Verificar que el servidor esté corriendo en:
+   ```
+   http://localhost:8080/api/mensaje
+   ```
 
-### **4️⃣ Verificar Permisos en `AndroidManifest.xml`**
-Asegúrate de que el permiso de acceso a internet esté habilitado:
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-```
+---
 
-### **5️⃣ Ejecutar la Aplicación**
-- **Emulador:** Presiona ▶ en Android Studio.
-- **Dispositivo Físico:** Conéctalo por USB y habilita la depuración USB.
+### **2️⃣ Configuración y Ejecución de la Aplicación Android**
+
+#### 📌 **Requisitos Previos:**
+- Tener instalado **Android Studio** (versión más reciente recomendada).
+- Dispositivo físico con modo desarrollador habilitado o un emulador configurado.
+
+#### 📌 **Pasos para Ejecutar la Aplicación Android:**
+1. Abrir **Android Studio** y seleccionar "Open an existing project".
+2. Navegar hasta la carpeta `AndroidApp` dentro del repositorio clonado.
+3. Verificar que el siguiente permiso esté en `AndroidManifest.xml`:
+   ```xml
+   <uses-permission android:name="android.permission.INTERNET"/>
+   ```
+4. Si se ejecuta en un **emulador**, asegurarse de que `RetrofitClient.kt` usa:
+   ```kotlin
+   private const val BASE_URL = "http://10.0.2.2:8080/"
+   ```
+   Si se usa un **dispositivo real**, cambiar `10.0.2.2` por la dirección IP local de la computadora.
+5. Ejecutar la aplicación en el emulador o dispositivo físico.
 
 ---
 
 ## 📌 Arquitectura de la Aplicación
 
-### **Diagrama de Arquitectura**
+### **Diagrama de Arquitectura:**
 ```
-+----------------------+      HTTP Request (GET)      +--------------------+
-|   Aplicación Android | --------------------------> |   Open Library API |
-|   (Retrofit + Glide) | <-------------------------- | (Datos JSON)       |
-+----------------------+       JSON Response        +--------------------+
++---------------------+       HTTP Request (GET)        +---------------------+
+|  Aplicación Android | ------------------------------> |    Servidor Node.js  |
+|     (Retrofit)      | <------------------------------ | (Express.js API)     |
++---------------------+         JSON Response          +---------------------+
 ```
 
 **Explicación:**
-1. El usuario ingresa un título en la aplicación.
-2. Retrofit realiza una solicitud `GET` a la API de Open Library.
-3. La API responde con datos en formato JSON.
-4. Los datos se procesan y se muestran en una lista (`RecyclerView`).
-
----
-
-## 📸 Capturas de Pantalla
-
-### 🔹 **Búsqueda de libros en la app**
-![Pantalla de búsqueda](ruta/captura_busqueda.png)
-
-### 🔹 **Resultados de libros con imágenes y detalles**
-![Lista de libros](ruta/captura_lista.png)
+1. La aplicación Android realiza una petición **GET** al backend usando **Retrofit**.
+2. El backend en **Node.js** procesa la solicitud y responde con un **JSON**.
+3. La aplicación recibe la respuesta y muestra el mensaje en pantalla.
 
 ---
 
 ## 🛠️ Desafíos y Soluciones
 
-### **1️⃣ Manejo de Errores de Conectividad**
-- **Problema:** Si el usuario no tiene conexión, la app se quedaba en carga infinita.
-- **Solución:** Se implementó un manejo de errores en Retrofit con `onFailure()` mostrando un mensaje `Toast` al usuario.
+### **1️⃣ Error de Conexión (`CLEARTEXT communication not permitted`)**
+- **Causa:** A partir de Android 9, las aplicaciones bloquean el tráfico HTTP.
+- **Solución:** Se agregó la siguiente configuración en `AndroidManifest.xml`:
+  ```xml
+  <application android:usesCleartextTraffic="true">
+  ```
 
-### **2️⃣ Mostrar Portadas de Libros**
-- **Problema:** Open Library no proporciona URLs directas de imágenes.
-- **Solución:** Se usó **Glide** para construir las URLs dinámicamente y cargar las imágenes correctamente.
+### **2️⃣ No se podía conectar desde el Emulador a `localhost`**
+- **Causa:** `localhost` en un emulador no apunta a la máquina host.
+- **Solución:** Se usó `10.0.2.2` en lugar de `localhost` en `RetrofitClient.kt`.
 
-### **3️⃣ Diseño Mejorado**
-- **Problema:** La interfaz inicial era muy básica.
-- **Solución:** Se usó **RecyclerView con CardView** para una mejor presentación.
+### **3️⃣ Error `Failed to Connect` en dispositivo real**
+- **Causa:** El Firewall bloqueaba la conexión al puerto 8080.
+- **Solución:** Se agregó una excepción al Firewall para permitir tráfico en el puerto 8080:
+  ```sh
+  netsh advfirewall firewall add rule name="Abrir Puerto 8080" dir=in action=allow protocol=TCP localport=8080
+  ```
 
 ---
 
 ## 📦 Dependencias Utilizadas
 
+### **Backend (Node.js)**
 | Dependencia  | Propósito |
 |-------------|----------|
-| `Retrofit`  | Manejo de peticiones HTTP para consumir la API |
-| `Gson`      | Conversión automática de JSON a objetos Kotlin |
-| `Glide`     | Carga y visualización de imágenes de portadas |
-| `RecyclerView` | Mostrar la lista de libros de manera eficiente |
-| `CardView`  | Mejora la presentación de los libros |
+| `express`   | Framework para crear el servidor HTTP |
+| `cors`      | Permite la comunicación entre el backend y el frontend |
+
+### **Android App**
+| Dependencia  | Propósito |
+|-------------|----------|
+| `Retrofit`  | Realiza peticiones HTTP de manera sencilla |
+| `Gson`      | Convierte JSON a objetos Kotlin automáticamente |
 
 ---
 
 ## 📌 Conclusión
-Esta aplicación demuestra cómo integrar una **API pública en Android** utilizando Retrofit y Glide. Se logró un diseño atractivo y funcional que permite a los usuarios buscar libros de manera eficiente. 🚀📚
+Este proyecto demostró cómo se puede implementar una comunicación entre una aplicación móvil y un backend en **Node.js**, utilizando **Retrofit** para consumir el servicio. Se resolvieron diversos problemas relacionados con la conectividad y compatibilidad, logrando así una aplicación funcional que muestra datos dinámicamente desde un servidor externo.
 
+---
 
+✅ **Autor:** [Tu Nombre]  
+📅 **Fecha:** [Fecha de Entrega]  
+🚀 **Repositorio:** [URL del Repositorio]
 
