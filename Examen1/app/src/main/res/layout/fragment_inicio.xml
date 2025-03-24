@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/robot"
+            android:contentDescription="Mascota educativa"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_bienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Bienvenido al mundo binario!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btn_binario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aprender Binario"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_ascii"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descifrar Código ASCII" />
+
+    </LinearLayout>
+</ScrollView>

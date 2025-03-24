@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Comunes -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Tema Guinda -->
+    <color name="guinda_primary">#8B004F</color>
+    <color name="guinda_primary_variant">#66003C</color>
+    <color name="guinda_on_primary">#FFFFFF</color>
+
+    <!-- Tema Azul -->
+    <color name="azul_primary">#005B96</color>
+    <color name="azul_primary_variant">#004070</color>
+    <color name="azul_on_primary">#FFFFFF</color>
+</resources>

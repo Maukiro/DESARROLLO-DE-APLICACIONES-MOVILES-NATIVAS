@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema claro: GUINDA -->
+    <style name="Theme_Guinda_Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/guinda_primary</item>
+        <item name="colorPrimaryVariant">@color/guinda_primary_variant</item>
+        <item name="colorOnPrimary">@color/guinda_on_primary</item>
+        <item name="android:statusBarColor">@color/guinda_primary_variant</item>
+        <item name="android:navigationBarColor">@color/guinda_primary</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!-- Tema claro: AZUL -->
+    <style name="Theme_Azul_Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azul_primary</item>
+        <item name="colorPrimaryVariant">@color/azul_primary_variant</item>
+        <item name="colorOnPrimary">@color/azul_on_primary</item>
+        <item name="android:statusBarColor">@color/azul_primary_variant</item>
+        <item name="android:navigationBarColor">@color/azul_primary</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+</resources>
