@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_register">
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.example.practice2.ui.auth.LoginFragment"
+        android:label="Iniciar sesión"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.example.practice2.ui.auth.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/nav_admin"
+        android:name="com.example.practice2.ui.admin.AdminFragment"
+        android:label="Gestión de usuarios"
+        tools:layout="@layout/fragment_admin" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.practice2.ui.user.PerfilFragment"
+        android:label="Mi perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/nav_editar_perfil"
+        android:name="com.example.practice2.ui.user.EditarPerfilFragment"
+        android:label="Editar Perfil"
+        tools:layout="@layout/fragment_editar_perfil" />
+
+    <fragment
+        android:id="@+id/nav_crear_usuario_admin"
+        android:name="com.example.practice2.ui.admin.CrearUsuarioAdminFragment"
+        android:label="Crear Usuario"
+        tools:layout="@layout/fragment_crear_usuario_admin" />
+
+    <fragment
+        android:id="@+id/nav_editar_usuario_admin"
+        android:name="com.example.practice2.ui.admin.EditarUsuarioAdminFragment"
+        android:label="Editar Usuario"
+        tools:layout="@layout/fragment_editar_usuario_admin">
+
+        <!-- Argumento requerido: email del usuario -->
+        <argument
+            android:name="emailUsuario"
+            app:argType="string" />
+    </fragment>
+
+
+
+
+</navigation>
