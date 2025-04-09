@@ -5,13 +5,14 @@ Además, incluye una versión alternativa con Google Maps para comparar rendimie
 
 El sistema de exploración urbana muestra puntos de interés que se desbloquean al visitarlos físicamente y una barra de progreso indica el porcentaje de zonas exploradas.
 
+
 🚀 Instrucciones para Configurar y Ejecutar la Aplicación
 Clonar el repositorio:
 
 bash
 Copiar
 Editar
-git clone https://github.com/tu-usuario/OpenStreetMapApp.git
+git clone https://github.com/Maukiro/DESARROLLO-DE-APLICACIONES-MOVILES-NATIVAS/tree/main/OpenStreetMapApp
 Abrir el proyecto en Android Studio.
 
 Sincronizar Gradle para descargar las dependencias.
@@ -21,6 +22,7 @@ Configurar permisos:
 Asegúrese de otorgar permisos de ubicación cuando la aplicación lo solicite.
 
 Ejecutar la aplicación en un dispositivo físico o emulador con servicios de ubicación habilitados.
+
 
 🏛️ Arquitectura de la Aplicación
 La aplicación sigue una arquitectura sencilla basada en Activities:
@@ -49,6 +51,7 @@ OpenStreetMap con zonas explorables	Exploración Progreso	Google Maps WebView
 ![image](https://github.com/user-attachments/assets/2b58c2bc-c9bd-4f81-8d76-45eea1b0fbc6)
 
 
+
 🛠️ Desafíos Encontrados y Soluciones
 Desafío	Solución
 Integrar mapas OSM en Android sin SDK nativo	Uso de WebView y Leaflet.js
@@ -56,6 +59,8 @@ Detectar zonas explorables en tiempo real	Cálculo de distancia entre coordenada
 Diferenciar zonas descubiertas/no descubiertas	Cambio dinámico de color en los círculos de Leaflet
 Comparar rendimientos entre mapas	Medir tiempos de carga y respuesta al toque
 Mostrar progresos visuales	Implementación de ProgressBar en tiempo real
+
+
 📦 Dependencias Utilizadas
 Dependencia	Propósito
 com.google.android.gms:play-services-location:21.0.1	Obtener la ubicación actual del usuario de forma precisa
