@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Tema base obligatorio para AndroidManifest -->
+    <style name="Theme.FileManagerApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item> <!-- O cualquier color provisional -->
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <!-- Tema Guinda -->
+    <style name="Theme.FileManagerApp.Guinda" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#800000</item>
+        <item name="colorPrimaryVariant">#5D001E</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#B71C1C</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+
+    <!-- Tema Azul -->
+    <style name="Theme.FileManagerApp.Azul" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#0033A0</item>
+        <item name="colorPrimaryVariant">#001F54</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#1976D2</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+
+</resources>

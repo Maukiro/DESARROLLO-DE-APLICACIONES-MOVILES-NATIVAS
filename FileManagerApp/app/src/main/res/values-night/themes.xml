@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Tema Guinda - Oscuro -->
+    <style name="Theme.FileManagerApp.Guinda" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#5D001E</item> <!-- Guinda Oscuro -->
+        <item name="colorPrimaryVariant">#3E0020</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#880E4F</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+
+    <!-- Tema Azul - Oscuro -->
+    <style name="Theme.FileManagerApp.Azul" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#001F54</item> <!-- Azul Oscuro -->
+        <item name="colorPrimaryVariant">#000A29</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#1565C0</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+
+</resources>
