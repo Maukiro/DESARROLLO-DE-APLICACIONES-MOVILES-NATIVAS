@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Contador_de_Toques</string>
+    <string-array name="formats_array">
+        <item>json</item>
+        <item>txt</item>
+        <item>xml</item>
+    </string-array>
+</resources>
