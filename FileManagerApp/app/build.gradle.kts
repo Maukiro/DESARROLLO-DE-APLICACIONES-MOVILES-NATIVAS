@@ -42,8 +42,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("com.jsibbold:zoomage:1.3.1")
+    implementation(libs.zoomage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.biometric:biometric:1.2.0-alpha04")
 }
