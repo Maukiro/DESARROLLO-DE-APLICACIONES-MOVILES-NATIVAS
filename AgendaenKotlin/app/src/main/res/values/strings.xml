@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Agenda en Kotlin</string>
+    <string name="nuevo_contacto">Nuevo Contacto</string>
+    <string name="nombre_usuario">Nombre</string>
+    <string name="numero_usuario">Numero</string>
+    <string name="nombre">Nombre:</string>
+    <string name="numero">Numero:</string>
+    <string name="notName">No has digitado un nombre</string>
+    <string name="notNumber">No has digitado un numero</string>
+    <string name="ok">Contacto Guardado</string>
+    <string name="numInvalid">Numero no valido</string>
+</resources>
