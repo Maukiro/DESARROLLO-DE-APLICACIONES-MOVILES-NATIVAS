@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HabitFlow</string>
+    <string name="home">Inicio</string>
+    <string name="add">Agregar</string>
+    <string name="stats">Estadísticas</string>
+
+</resources>
